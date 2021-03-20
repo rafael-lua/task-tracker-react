@@ -53,8 +53,11 @@ function App() {
   // Main view
   return (
     <div className="container">
-      <Header title="Task Tracker React" onAdd={() => setShowAddTask(!showAddTask)} />
+
+      <Header title="Task Tracker React" onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
+
       {showAddTask === true ? <AddTask onAdd={addTask} /> : null}
+
       {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : "No tasks available."}
     </div>
   );
